@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dpchrist-LangUtil
-version:            1.003
+version:            1.006
 abstract:           Perl language utilities
 author:
     - David Paul Christensen <dpchrist@holgerdanske.com>
