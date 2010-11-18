@@ -4,7 +4,7 @@ Makefile.PL
 lib/Dpchrist/LangUtil.pm
 t/0_compile_modules.t
 t/1_Dpchrist-LangUtil.t
-t/2_array_cmp.t
+t/2_arrayref_cmp.t
 t/2_defined_or.t
 t/2_hashref_keys.t
 t/9_pod.t

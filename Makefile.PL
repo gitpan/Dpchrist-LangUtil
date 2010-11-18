@@ -1,7 +1,7 @@
 #######################################################################
-# $Id: Makefile.PL,v 1.2 2010-06-06 03:37:09 dpchrist Exp $
+# $Id: Makefile.PL,v 1.4 2010-11-18 19:28:06 dpchrist Exp $
 #
-# Copyright 2010 by David Paul Christensen dpchrist@holgerdanske.com
+# Copyright 2010 (c) by David Paul Christensen dpchrist@holgerdanske.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,6 +31,7 @@ WriteMakefile(
     NAME		=> 'Dpchrist::LangUtil',
     VERSION_FROM	=> 'lib/Dpchrist/LangUtil.pm',
     PREREQ_PM		=> {
+	'Dpchrist::Module'		=> 1.019,
 	'feature'			=> 0,
     },
     ABSTRACT_FROM	=> 'lib/Dpchrist/LangUtil.pm',

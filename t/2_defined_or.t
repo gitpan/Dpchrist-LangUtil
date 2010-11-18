@@ -1,9 +1,9 @@
 #######################################################################
-# $Id: 2_defined_or.t,v 1.1 2009-06-03 03:12:56 dpchrist Exp $
+# $Id: 2_defined_or.t,v 1.2 2010-11-18 19:26:14 dpchrist Exp $
 #
 # Test script for Dpchrist::LangUtil::defined_or().
 #
-# Copyright 2009 by David Paul Christensen dpchrist@holgerdanske.com
+# Copyright (c) 2010 by David Paul Christensen dpchrist@holgerdanske.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

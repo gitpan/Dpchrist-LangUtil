@@ -1,9 +1,9 @@
 #######################################################################
-# $Id: 2_hashref_keys.t,v 1.1 2010-11-09 02:26:25 dpchrist Exp $
+# $Id: 2_hashref_keys.t,v 1.2 2010-11-18 19:26:14 dpchrist Exp $
 #
 # Test script for Dpchrist::LangUtil::hashref_keys().
 #
-# Copyright 2010 by David Paul Christensen dpchrist@holgerdanske.com
+# Copyright (c) 2010 by David Paul Christensen dpchrist@holgerdanske.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

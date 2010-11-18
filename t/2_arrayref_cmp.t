@@ -1,9 +1,9 @@
 #######################################################################
-# $Id: 2_array_cmp.t,v 1.1 2010-11-14 18:57:34 dpchrist Exp $
+# $Id: 2_arrayref_cmp.t,v 1.2 2010-11-18 19:26:14 dpchrist Exp $
 #
-# Test script for Dpchrist::LangUtil::array_cmp().
+# Test script for Dpchrist::LangUtil::arrayref_cmp().
 #
-# Copyright 2010 by David Paul Christensen dpchrist@holgerdanske.com
+# Copyright (c) 2010 by David Paul Christensen dpchrist@holgerdanske.com
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ use Test::More tests => 12;
 
 use Data::Dumper;
 
-use Dpchrist::LangUtil	qw (array_cmp );
+use Dpchrist::LangUtil	qw (arrayref_cmp );
 
 my $e;
 
@@ -35,7 +35,7 @@ my @a123 = (1, 2, 3);
 my @empty = ();
 
 $e = eval {
-    array_cmp();
+    arrayref_cmp();
 };
 ok( $@,
     "call with no arguments should throw exception",
@@ -44,7 +44,7 @@ ok( $@,
 );
 
 $e = eval {
-    array_cmp(@a123, @a123);
+    arrayref_cmp(@a123, @a123);
 };
 ok( $@,
     "call with two scalar array arguments should throw exception",
@@ -53,7 +53,7 @@ ok( $@,
 );
 
 $e = eval {
-    array_cmp(\@a123, @a123);
+    arrayref_cmp(\@a123, @a123);
 };
 ok( $@,
     "call with array reference and array arguments " .
@@ -63,7 +63,7 @@ ok( $@,
 );
 
 $e = eval {
-    array_cmp(@a123, \@a123);
+    arrayref_cmp(@a123, \@a123);
 };
 ok( $@,
     "call with array and array reference arguments " .
@@ -73,7 +73,7 @@ ok( $@,
 );
 
 $e = eval {
-    array_cmp([], []);
+    arrayref_cmp([], []);
 };
 ok( $e == 0,
     "call with two empty anonymous arrays should return 0",
@@ -82,7 +82,7 @@ ok( $e == 0,
 );
 
 $e = eval {
-    array_cmp([], \@empty);
+    arrayref_cmp([], \@empty);
 };
 ok( $e == 0,
     "call with empty anonymous and lexical arrays should return 0",
@@ -91,7 +91,7 @@ ok( $e == 0,
 );
 
 $e = eval {
-    array_cmp([], [EMPTY]);
+    arrayref_cmp([], [EMPTY]);
 };
 ok( $e == 0,
     "call with empty anonymous and constant arrays should return 0",
@@ -100,7 +100,7 @@ ok( $e == 0,
 );
 
 $e = eval {
-    array_cmp([1, 2, 3], [1, 2, 3]);
+    arrayref_cmp([1, 2, 3], [1, 2, 3]);
 };
 ok( $e == 0,
     "call with identical anonymous arrays should return 0",
@@ -109,7 +109,7 @@ ok( $e == 0,
 );
 
 $e = eval {
-    array_cmp([1, 2, 3], \@a123);
+    arrayref_cmp([1, 2, 3], \@a123);
 };
 ok( $e == 0,
     "call with equal anonymous and lexical arrays should return 0",
@@ -118,7 +118,7 @@ ok( $e == 0,
 );
 
 $e = eval {
-    array_cmp([1, 2, 3], [A123]);
+    arrayref_cmp([1, 2, 3], [A123]);
 };
 ok( $e == 0,
     "call with equal anonymous and constant arrays should return 0",
@@ -127,7 +127,7 @@ ok( $e == 0,
 );
 
 $e = eval {
-    array_cmp([], [1, 2, 3]);
+    arrayref_cmp([], [1, 2, 3]);
 };
 ok( $e == -1,
     "call with empty and non-empty anonymous arrays should return -1",
@@ -136,7 +136,7 @@ ok( $e == -1,
 );
 
 $e = eval {
-    array_cmp([1, 2, 3], []);
+    arrayref_cmp([1, 2, 3], []);
 };
 ok( $e == 1,
     "call with non-empty and empty arrays should return 1",

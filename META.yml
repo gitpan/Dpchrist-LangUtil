@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dpchrist-LangUtil
-version:            1.006
+version:            1.007
 abstract:           Perl language utilities
 author:
     - David Paul Christensen <dpchrist@holgerdanske.com>
@@ -11,7 +11,8 @@ configure_requires:
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    feature:  0
+    Dpchrist::Module:  1.019
+    feature:           0
 no_index:
     directory:
         - t

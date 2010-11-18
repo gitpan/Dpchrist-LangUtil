@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: LangUtil.pm,v 1.6 2010-11-15 23:29:45 dpchrist Exp $
+# $Id: LangUtil.pm,v 1.7 2010-11-18 19:26:14 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
@@ -13,14 +13,14 @@ use warnings;
 require Exporter;
 our @ISA = qw(Exporter);
 our %EXPORT_TAGS = ( 'all' => [ qw(
-    array_cmp
+    arrayref_cmp
     defined_or
     hashref_keys
 ) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.6 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.7 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
@@ -48,9 +48,9 @@ Dpchrist::LangUtil - Perl language utilities
 
 #----------------------------------------------------------------------
 
-=head3 array_cmp
+=head3 arrayref_cmp
 
-    array_cmp ARRAYREF,ARRAYREF
+    arrayref_cmp ARRAYREF,ARRAYREF
 
 Applies '<=>' (spaceship) operator to array lengths and then
 applies 'cmp' operator to array elements in turn.
@@ -62,7 +62,7 @@ Calls confess() on error.
 
 =cut
 
-sub array_cmp
+sub arrayref_cmp
 {
     confess join(' ',
 	'ERROR: arguments must be two array references',
@@ -143,15 +143,25 @@ All of the subroutines may be imported by using the ':all' tag:
 
     use Dpchrist::LangUtil         qw( :all ); 
 
-    See 'perldoc Export' for everything in between.
+See 'perldoc Export' for everything in between.
 
 
 =head1 INSTALLATION
+
+Old school:
 
     perl Makefile.PL
     make    
     make test
     make install 
+
+Minimal:
+
+    cpan Dpchrist::LangUtil
+
+Complete:
+
+    cpan Bundle::Dpchrist
 
 
 =head1 DEPENDENCIES
@@ -167,7 +177,7 @@ David Paul Christensen dpchrist@holgerdanske.com
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2010 by David Paul Christensen dpchrist@holgerdanske.com
+Copyright (c) 2010 by David Paul Christensen dpchrist@holgerdanske.com
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
