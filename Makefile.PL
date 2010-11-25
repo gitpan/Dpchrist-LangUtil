@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: Makefile.PL,v 1.5 2010-11-25 02:33:05 dpchrist Exp $
+# $Id: Makefile.PL,v 1.7 2010-11-25 19:33:31 dpchrist Exp $
 #
 # Copyright 2010 (c) by David Paul Christensen dpchrist@holgerdanske.com
 #
@@ -22,7 +22,8 @@ use ExtUtils::MakeMaker;
 
 use Dpchrist::Module::MakefilePL (
     -mcpani		=> $ENV{CPAN_AUTHORID},
-    -pod2html	 	=> qw( lib/Dpchrist/LangUtil.pm ),
+    -pod2html	 	=> qw(lib/Dpchrist/LangUtil.pm),
+    -readme	 	=> qw(lib/Dpchrist/LangUtil.pm),
     -release		=> $ENV{RELEASE_ROOT},
 );
 
@@ -30,14 +31,15 @@ WriteMakefile(
     NAME		=> 'Dpchrist::LangUtil',
     VERSION_FROM	=> 'lib/Dpchrist/LangUtil.pm',
     PREREQ_PM		=> {
-	'Dpchrist::Module'		=> 1.019,
-	'feature'			=> 0,
+	'Capture::Tiny'		=> 0,
+	'Dpchrist::Module'	=> 1.021,
+	'feature'		=> 0,
     },
     ABSTRACT_FROM	=> 'lib/Dpchrist/LangUtil.pm',
     AUTHOR		=>
 	'David Paul Christensen <dpchrist@holgerdanske.com>',
-    clean		=> { FILES =>
-	q( *~tmp */*~tmp Dpchrist* )
+    clean		=> {
+	FILES	=> q( *~tmp */*~tmp Dpchrist* ),
     },
 );
 
