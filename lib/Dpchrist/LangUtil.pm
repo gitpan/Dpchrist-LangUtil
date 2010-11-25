@@ -1,12 +1,11 @@
 #######################################################################
-# $Id: LangUtil.pm,v 1.7 2010-11-18 19:26:14 dpchrist Exp $
+# $Id: LangUtil.pm,v 1.8 2010-11-25 02:33:05 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
 
 package Dpchrist::LangUtil;
 
-use 5.010000;
 use strict;
 use warnings;
 
@@ -20,7 +19,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.7 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.8 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
