@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: Makefile.PL,v 1.7 2010-11-25 19:33:31 dpchrist Exp $
+# $Id: Makefile.PL,v 1.8 2010-11-26 20:28:19 dpchrist Exp $
 #
 # Copyright 2010 (c) by David Paul Christensen dpchrist@holgerdanske.com
 #
@@ -32,7 +32,7 @@ WriteMakefile(
     VERSION_FROM	=> 'lib/Dpchrist/LangUtil.pm',
     PREREQ_PM		=> {
 	'Capture::Tiny'		=> 0,
-	'Dpchrist::Module'	=> 1.021,
+	'Dpchrist::Module'	=> 1.023,
 	'feature'		=> 0,
     },
     ABSTRACT_FROM	=> 'lib/Dpchrist/LangUtil.pm',
