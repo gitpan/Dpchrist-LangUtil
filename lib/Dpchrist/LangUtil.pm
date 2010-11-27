@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: LangUtil.pm,v 1.11 2010-11-26 20:28:19 dpchrist Exp $
+# $Id: LangUtil.pm,v 1.12 2010-11-27 03:37:59 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
@@ -20,7 +20,7 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.11 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.12 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
@@ -38,7 +38,7 @@ Dpchrist::LangUtil - Perl language utilities
 
 =head1 DESCRIPTION
 
-This documentation describes module revision $Revision: 1.11 $.
+This documentation describes module revision $Revision: 1.12 $.
 
 
 This is alpha test level software
@@ -183,23 +183,30 @@ See 'perldoc Export' for everything in between.
 
 Old school:
 
-    perl Makefile.PL
-    make    
-    make test
-    make install 
+    $ perl Makefile.PL
+    $ make    
+    $ make test
+    $ make install 
 
 Minimal:
 
-    cpan Dpchrist::LangUtil
+    $ cpan Dpchrist::LangUtil
 
 Complete:
 
-    cpan Bundle::Dpchrist
+    $ cpan Bundle::Dpchrist
+
+The following warning may be safely ignored:
+
+    Can't locate Dpchrist/Module/MakefilePL.pm in @INC (@INC contains: /
+    etc/perl /usr/local/lib/perl/5.10.0 /usr/local/share/perl/5.10.0 /us
+    r/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.10 /usr/share/perl/5.10
+    /usr/local/lib/site_perl .) at Makefile.PL line 22.
 
 
-=head1 DEPENDENCIES
+=head2 PREREQUISITES
 
-    Dpchrist::Module
+See Makefile.PL in the source distribution root directory.
 
 
 =head1 AUTHOR
