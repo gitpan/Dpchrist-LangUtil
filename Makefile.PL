@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: Makefile.PL,v 1.10 2010-11-27 07:37:15 dpchrist Exp $
+# $Id: Makefile.PL,v 1.13 2010-12-01 07:14:01 dpchrist Exp $
 #
 # Copyright 2010 (c) by David Paul Christensen dpchrist@holgerdanske.com
 #
@@ -18,37 +18,41 @@
 # USA.
 #######################################################################
 
+package Dpchrist::ExtUtils::MakeMaker;	# for symbols
+
+use ExtUtils::MakeMaker;
+
+eval "use Test::Manifest";
+warn $@ if $@;
+
 eval {
-    require Dpchrist::Module::MakefilePL;
-    
-    import Dpchrist::Module::MakefilePL (
-	-mcpani		=> $ENV{CPAN_AUTHORID},
-	-pod2html 	=> 'lib/Dpchrist/LangUtil.pm',
-	-readme	 	=> 'lib/Dpchrist/LangUtil.pm',
-	-release	=> $ENV{RELEASE_ROOT},
+    require Dpchrist::ExtUtils::MakeMaker;
+    import  Dpchrist::ExtUtils::MakeMaker (
+	postamble => sub {
+	    my ($o, $prev) = @_;
+	    return join('',
+		$prev,
+		mcpani  ($o, $ENV{CPAN_AUTHORID}),
+		pod2html($o, 'lib/Dpchrist/LangUtil.pm'),
+		readme  ($o, 'lib/Dpchrist/LangUtil.pm'),
+		release ($o, $ENV{RELEASE_ROOT}),
+	    );
+	},
     );
 };
 warn $@ if $@;
-
-use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME		=> 'Dpchrist::LangUtil',
     VERSION_FROM	=> 'lib/Dpchrist/LangUtil.pm',
     PREREQ_PM		=> {
 	Capture::Tiny		=> 0,
-	Dpchrist::Module	=> 1.026,
-	Getopt::Long		=> 0,
-	Pod::Html		=> 0,
-	Pod::Text		=> 0,
-	Pod::Usage		=> 0,
-	feature			=> 0,
     },
     ABSTRACT_FROM	=> 'lib/Dpchrist/LangUtil.pm',
     AUTHOR		=>
 	'David Paul Christensen <dpchrist@holgerdanske.com>',
     clean		=> {
-	FILES	=> q( *~tmp */*~tmp Dpchrist* ),
+	FILES => q( *~tmp */*~tmp *.tar debug.log ),
     },
 );
 

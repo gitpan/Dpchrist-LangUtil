@@ -3,12 +3,13 @@ MANIFEST
 README
 Makefile.PL
 lib/Dpchrist/LangUtil.pm
-t/0_compile_modules.t
-t/1_Dpchrist-LangUtil.t
-t/2_arrayref_cmp.t
-t/2_defined_or.t
-t/2_echo_system.t
-t/2_hashref_keys.t
-t/9_pod.t
-t/9_prereq.t
+t/Dpchrist-LangUtil.t
+t/arrayref_cmp.t
+t/defined_or.t
+t/echo_system.t
+t/hashref_keys.t
+t/test-compile-all_pm_files_ok.t
+t/test-pod-all_pod_files_ok.t
+t/test-prereq-prereq_ok.t
+t/test_manifest
 META.yml                                 Module meta-data (added by MakeMaker)

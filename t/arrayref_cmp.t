@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: 2_arrayref_cmp.t,v 1.2 2010-11-18 19:26:14 dpchrist Exp $
+# $Id: arrayref_cmp.t,v 1.2 2010-11-18 19:26:14 dpchrist Exp $
 #
 # Test script for Dpchrist::LangUtil::arrayref_cmp().
 #

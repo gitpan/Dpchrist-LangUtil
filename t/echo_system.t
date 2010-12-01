@@ -1,4 +1,4 @@
-# $Id: 2_echo_system.t,v 1.6 2010-11-25 19:33:31 dpchrist Exp $
+# $Id: echo_system.t,v 1.7 2010-11-30 20:20:15 dpchrist Exp $
 
 use Test::More tests => 2;
 
@@ -35,7 +35,7 @@ ok(								#     1
 		     [qw(line   r   stdout   stderr   @)])
 );
 
-$line = "/nosuchcommand";
+$line = "nosuchcommand";
 ($stdout, $stderr) = capture {
     $r = eval {
 	echo_system $line;

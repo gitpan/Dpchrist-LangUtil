@@ -1,0 +1,8 @@
+test-compile-all_pm_files_ok.t
+Dpchrist-LangUtil.t
+arrayref_cmp.t
+defined_or.t
+echo_system.t
+hashref_keys.t
+test-pod-all_pod_files_ok.t
+test-prereq-prereq_ok.t
