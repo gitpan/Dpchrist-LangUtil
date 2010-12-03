@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: LangUtil.pm,v 1.14 2010-11-30 20:20:15 dpchrist Exp $
+# $Id: LangUtil.pm,v 1.15 2010-12-03 05:13:50 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
@@ -10,17 +10,21 @@ use strict;
 use warnings;
 
 require Exporter;
+
 our @ISA = qw(Exporter);
+
 our %EXPORT_TAGS = ( 'all' => [ qw(
     arrayref_cmp
     defined_or
     echo_system
     hashref_keys
 ) ] );
+
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
+
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.14 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.15 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
@@ -38,7 +42,7 @@ Dpchrist::LangUtil - Perl language utilities
 
 =head1 DESCRIPTION
 
-This documentation describes module revision $Revision: 1.14 $.
+This documentation describes module revision $Revision: 1.15 $.
 
 
 This is alpha test level software
@@ -176,8 +180,6 @@ All of the subroutines may be imported by using the ':all' tag:
 
     use Dpchrist::LangUtil         qw( :all ); 
 
-See 'perldoc Export' for everything in between.
-
 
 =head1 INSTALLATION
 
@@ -195,13 +197,6 @@ Minimal:
 Complete:
 
     $ cpan Bundle::Dpchrist
-
-The following warning may be safely ignored:
-
-    Can't locate Dpchrist/Module/MakefilePL.pm in @INC (@INC contains: /
-    etc/perl /usr/local/lib/perl/5.10.0 /usr/local/share/perl/5.10.0 /us
-    r/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.10 /usr/share/perl/5.10
-    /usr/local/lib/site_perl .) at Makefile.PL line 22.
 
 
 =head2 PREREQUISITES
