@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Dpchrist-LangUtil
-version:            1.015
+version:            1.016
 abstract:           Perl language utilities
 author:
     - David Paul Christensen <dpchrist@holgerdanske.com>
@@ -11,17 +11,15 @@ configure_requires:
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    Capture::Tiny:        0
-    Carp:                 0
-    Data::Dumper:         0
-    Dpchrist::ExtUtils::MakeMaker:  1.015
-    Exporter:             0
-    ExtUtils::MakeMaker:  0
-    Test::Compile:        0
-    Test::Manifest:       0
-    Test::More:           0
-    Test::Pod:            0
-    Test::Prereq:         0
+    Carp:                 1.08
+    Data::Dumper:         2.12114
+    Exporter:             5.62
+    ExtUtils::MakeMaker:  6.54
+    Test::Compile:        0.1
+    Test::Manifest:       1.22
+    Test::More:           0.72
+    Test::Pod:            1.4
+    Test::Prereq:         1.037
 no_index:
     directory:
         - t

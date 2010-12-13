@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: LangUtil.pm,v 1.15 2010-12-03 05:13:50 dpchrist Exp $
+# $Id: LangUtil.pm,v 1.16 2010-12-04 00:39:12 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
@@ -16,7 +16,6 @@ our @ISA = qw(Exporter);
 our %EXPORT_TAGS = ( 'all' => [ qw(
     arrayref_cmp
     defined_or
-    echo_system
     hashref_keys
 ) ] );
 
@@ -24,7 +23,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.15 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.16 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
@@ -42,7 +41,7 @@ Dpchrist::LangUtil - Perl language utilities
 
 =head1 DESCRIPTION
 
-This documentation describes module revision $Revision: 1.15 $.
+This documentation describes module revision $Revision: 1.16 $.
 
 
 This is alpha test level software
@@ -112,31 +111,6 @@ sub defined_or
     }
 
     return;
-}
-
-#----------------------------------------------------------------------
-
-=head3 echo_system
-
-    echo_system LIST
-
-Prints newline,
-dollar sign,
-space,
-LIST items seperated by spaces,
-and newline to STDOUT,
-and then passes through call to system().
-
-=cut
-
-sub echo_system
-{
-    print
-	"\n\$ ",
-      	join(' ', @_),
-	"\n";
-    
-    return system @_;
 }
 
 #----------------------------------------------------------------------

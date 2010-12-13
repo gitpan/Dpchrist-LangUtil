@@ -6,7 +6,6 @@ lib/Dpchrist/LangUtil.pm
 t/Dpchrist-LangUtil.t
 t/arrayref_cmp.t
 t/defined_or.t
-t/echo_system.t
 t/hashref_keys.t
 t/test-compile-all_pm_files_ok.t
 t/test-pod-all_pod_files_ok.t
