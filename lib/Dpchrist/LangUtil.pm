@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: LangUtil.pm,v 1.16 2010-12-04 00:39:12 dpchrist Exp $
+# $Id: LangUtil.pm,v 1.17 2010-12-14 05:25:03 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
@@ -23,7 +23,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.16 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.17 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
@@ -41,7 +41,7 @@ Dpchrist::LangUtil - Perl language utilities
 
 =head1 DESCRIPTION
 
-This documentation describes module revision $Revision: 1.16 $.
+This documentation describes module revision $Revision: 1.17 $.
 
 
 This is alpha test level software
@@ -68,6 +68,7 @@ applies 'cmp' operator to array elements in turn.
 Returns first non-zero comparison result encountered,
 or zero if arrays have equal length
 and if all corresponding elements are equal strings.
+Returns -1 if an undefined value is encountered.
 
 Calls confess() on error.
 
@@ -85,8 +86,13 @@ sub arrayref_cmp
     my $retval = @{$_[0]} <=> @{$_[1]};
     my $i = 0;
     while($retval == 0 && $i < scalar @{$_[0]}) {
-	$retval = $_[0][$i] cmp $_[1][$i];
-	$i++;
+	if (defined $_[0][$i] && defined $_[1][$i]) {
+	    $retval = $_[0][$i] cmp $_[1][$i];
+	    $i++;
+	}
+	else {
+	    $retval = -1;
+	}
     }
 
     return $retval;
