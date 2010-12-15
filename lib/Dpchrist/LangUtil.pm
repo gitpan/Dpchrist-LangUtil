@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: LangUtil.pm,v 1.17 2010-12-14 05:25:03 dpchrist Exp $
+# $Id: LangUtil.pm,v 1.18 2010-12-15 00:40:55 dpchrist Exp $
 #######################################################################
 # package:
 #----------------------------------------------------------------------
@@ -23,7 +23,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = sprintf("%d.%03d", q$Revision: 1.17 $ =~ /(\d+)/g);
+our $VERSION = sprintf("%d.%03d", q$Revision: 1.18 $ =~ /(\d+)/g);
 
 #######################################################################
 # uses:
@@ -41,7 +41,7 @@ Dpchrist::LangUtil - Perl language utilities
 
 =head1 DESCRIPTION
 
-This documentation describes module revision $Revision: 1.17 $.
+This documentation describes module revision $Revision: 1.18 $.
 
 
 This is alpha test level software
