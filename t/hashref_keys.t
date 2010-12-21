@@ -1,5 +1,5 @@
 #######################################################################
-# $Id: hashref_keys.t,v 1.2 2010-11-18 19:26:14 dpchrist Exp $
+# $Id: hashref_keys.t,v 1.4 2010-12-20 06:05:18 dpchrist Exp $
 #
 # Test script for Dpchrist::LangUtil::hashref_keys().
 #
@@ -26,6 +26,8 @@ use warnings;
 use Test::More tests => 13;
 
 use Dpchrist::LangUtil	qw (hashref_keys );
+
+use File::Basename;
 
 use constant S   =>  "constant string";
 use constant A   => ("constant", "array");
@@ -55,7 +57,7 @@ my @r;
 ok(								#     1
     $@,
     "call with no arguments should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -65,7 +67,7 @@ ok(								#     1
 ok(								#     2
     $@,
     "call on undefined value should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -75,7 +77,7 @@ ok(								#     2
 ok(								#     3
     $@,
     "call on string should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -85,7 +87,7 @@ ok(								#     3
 ok(								#     4
     $@,
     "call on constant scalar should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -95,7 +97,7 @@ ok(								#     4
 ok(								#     5
     $@,
     "call on constant array should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -105,7 +107,7 @@ ok(								#     5
 ok(								#     6
     $@,
     "call on constant array reference should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -117,7 +119,7 @@ ok(								#     7
     && grep("-constant", @r)
     && grep("-hashref", @r),
     "call on constant hash reference should return keys"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -127,7 +129,7 @@ ok(								#     7
 ok(								#     8
     $@,
     "call on scalar should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -137,7 +139,7 @@ ok(								#     8
 ok(								#     9
     $@,
     "call on scalar reference should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -147,7 +149,7 @@ ok(								#     9
 ok(								#    10
     $@,
     "call on array should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -157,7 +159,7 @@ ok(								#    10
 ok(								#    11
     $@,
     "call on array reference should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -167,7 +169,7 @@ ok(								#    11
 ok(								#    12
     $@,
     "call on hash should throw exception"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
@@ -179,7 +181,7 @@ ok(								#    13
     && grep("a", @r)
     && grep("c", @r),
     "call on hash reference should return keys"
-) or confess join(" ", __FILE__, __LINE__,
+) or confess join(" ", basename(__FILE__), __LINE__,
     Data::Dumper->Dump([\@r, $@], [qw(*r @)])
 );
 
